@@ -1,0 +1,14 @@
+Define gameBoard Object (board = 2d 3x3 array) - this will track the state of the board
+define player object (name, symbol of choice)
+
+define gameLogic Object [this is the most important bit]
+- there should be a variable that keeps track of whose turn it is, at every turn it is updated. 
+- makeMove method, takes as arguments (gameboard object, playerturn, playerChoice)
+        - gets the playerturn 
+        - checks if the playerChoice is valid move (valid if cell == Null), raise error otherwise 
+        - if valid, updates state of the gameBoard object based on the playerTurn 
+        - check states against set of winning states, if win --> throw win message, else
+        - update player turn state 
+
+
+- check win state function
