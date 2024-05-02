@@ -64,6 +64,9 @@ const Game = (() => {
         if (checkForWin(GameBoard.getGameBoard(), players[currentPlayerIndex].mark)) {
             gameOver = true;
             alert(`${players[currentPlayerIndex].name} won!`)
+        } else if (checkForTie(GameBoard.getGameBoard())) {
+            gameOver = true;
+            alert("it's a tie");
         }
         currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
     }
@@ -81,6 +84,10 @@ const Game = (() => {
         restart
     }
 })();
+
+function checkForTie(board) {
+    return board.every(cell => cell != "")
+}
 
 function checkForWin(board) {
     const winningCombinations = [
